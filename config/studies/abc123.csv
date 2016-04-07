@@ -1,0 +1,18 @@
+Study Identifier,ABC123,,
+Total N,200,,
+Default Question Title,My Title,,
+Default Question Subtitle,My Subtitle,,
+Default Legend Description,My Legend,,
+,,,
+Default Legend Image,person.png,Additional image format example R_person.png,
+Legend Definitions,R,Y,
+Legend Descriptions,Something red,Something yellow,
+Legend Help Text,So this means something,And this means something,
+Legend Colors (HTML safe),#FF0000,#FFFF00,
+,,,
+Example Sets,Simple,Advanced,
+,10R:5Y|20R:10Y,10R:5Y|20R:10Y;T=Title|ST=Subtitle|LD=Legend Description,
+,,,
+Begin Sets (DO NOT REMOVE),,,
+10R:5Y|20R:10Y,10R:5Y|20R:10Y,10R:5Y|20R:10Y,10R:5Y|20R:10Y
+10R:5Y|20R:10Y;T=Title|ST=Subtitle|LD=Legend Description,10R:5Y|20R:10Y;T=Title|ST=Subtitle|LD=Legend Description,10R:5Y|20R:10Y;T=Title|ST=Subtitle|LD=Legend Description,10R:5Y|20R:10Y;T=Title|ST=Subtitle|LD=Legend Description
