@@ -34,7 +34,7 @@ task load: :environment do
       questions["QUESTION#{qindex}"] = {}
       xquestions.split(':').each_with_index do |q, index|
         count,color = q.gsub(/[^0-9]/, ''), q.gsub(/[^A-Za-z]/, '')
-        questions["QUESTION#{qindex}"]["OPTION#{index}"] = {"COUNT" => count, "COLOR" => color}
+        questions["QUESTION#{qindex}"]["OPTION#{index}"] = {"COUNT" => count, "DIMENSION" => color}
       end
     end
 
@@ -126,6 +126,15 @@ task load: :environment do
                         default_legend_image: default_legend_image,
                         legend_definitions: legend_definitions,
                         legend_help_text: legend_help_text
+
+    set_hash.each do |participant,questions|
+      questions.each do |k, set|
+        question_set = survey.question_sets.new participant_identifier: participant, descriptors: set["DESCRIPTORS"]
+        set["QUESTIONS"].each do |ques, options|
+          question_set.questions.new dimensions: options
+        end
+      end
+    end
 
     if survey.save
       puts ""

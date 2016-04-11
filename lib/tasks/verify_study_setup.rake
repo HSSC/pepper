@@ -35,7 +35,7 @@ task verify: :environment do
       questions["QUESTION#{qindex}"] = {}
       xquestions.split(':').each_with_index do |q, index|
         count,color = q.gsub(/[^0-9]/, ''), q.gsub(/[^A-Za-z]/, '')
-        questions["QUESTION#{qindex}"]["OPTION#{index}"] = {"COUNT" => count, "COLOR" => color}
+        questions["QUESTION#{qindex}"]["OPTION#{index}"] = {"COUNT" => count, "DIMENSION" => color}
       end
     end
 

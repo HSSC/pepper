@@ -6,4 +6,6 @@ class Survey < ActiveRecord::Base
   validates :total_n, presence: true, numericality: true
   validates :default_legend_image, presence: true
   validates :legend_definitions, presence: true
+
+  has_many :question_sets
 end

@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160411181245) do
+ActiveRecord::Schema.define(version: 20160411185241) do
+
+  create_table "question_sets", force: :cascade do |t|
+    t.integer  "survey_id",              limit: 4
+    t.string   "participant_identifier", limit: 255
+    t.text     "descriptors",            limit: 65535
+    t.boolean  "used"
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+  end
+
+  create_table "questions", force: :cascade do |t|
+    t.integer  "question_set_id", limit: 4
+    t.text     "dimensions",      limit: 65535
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
 
   create_table "surveys", force: :cascade do |t|
     t.string   "study_identifier",           limit: 255
