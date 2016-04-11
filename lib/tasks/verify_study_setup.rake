@@ -4,13 +4,13 @@ require 'colorize'
 desc "Verify study setup document is in the correct format"
 task verify: :environment do
 
-  def extract_and_display_setup_value(setup_file, setup_hash)
+  def extract_and_display_setup_value(setup_file, config_hash)
     row = setup_file.shift
     k = row.shift
     v = row.compact
 
     puts "#{k}: #{v.join(', ')}"
-    setup_hash[k] = v
+    config_hash[k] = v
   end
 
   def extract_sets(setup_file, set_hash, auto_id)
@@ -62,8 +62,8 @@ task verify: :environment do
     puts message
   end
 
-  def setup_parameter_exists(setup_hash, param)
-    parameter = setup_hash[param].join(', ') rescue nil # we don't want join to fail, we want to see the message
+  def setup_parameter_exists(config_hash, param)
+    parameter = config_hash[param].join(', ') rescue nil # we don't want join to fail, we want to see the message
     puts "#{param}: #{parameter.nil? ? "false".colorize(:red) : parameter.colorize(:green)}"
     parameter
   end
@@ -102,10 +102,10 @@ task verify: :environment do
   setup_file.shift  # remove first line, it's just descriptive text and a warning
   
   puts "##############  SURVEY SETUP ###########"
-  setup_hash = {}
+  config_hash = {}
 
   until setup_file.first.at(0) == 'End Setup (DO NOT REMOVE)' do
-    extract_and_display_setup_value(setup_file, setup_hash)
+    extract_and_display_setup_value(setup_file, config_hash)
   end
   puts "##############  SURVEY SETUP ###########"
 
@@ -137,36 +137,37 @@ task verify: :environment do
   puts "##############  REQUIREMENTS  ##############"
     puts "SETUP REQUIREMENTS"
 
-    study_identifier = setup_parameter_exists(setup_hash, 'Study Identifier')
-    setup_parameter_exists(setup_hash, 'Total N')
-    setup_parameter_exists(setup_hash, 'Default Set Title')
-    setup_parameter_exists(setup_hash, 'Default Set Subtitle')
-    setup_parameter_exists(setup_hash, 'Default Legend Description')
-    setup_parameter_exists(setup_hash, 'Default Legend Image')
-    setup_parameter_exists(setup_hash, 'Legend Definitions')
-    setup_parameter_exists(setup_hash, 'Legend Help Text')
+    study_identifier = setup_parameter_exists(config_hash, 'Study Identifier')
+    setup_parameter_exists(config_hash, 'Total N')
+    #setup_parameter_exists(config_hash, 'Default Set Title')
+    #setup_parameter_exists(config_hash, 'Default Set Subtitle')
+    #setup_parameter_exists(config_hash, 'Default Legend Description')
+    legend_image = setup_parameter_exists(config_hash, 'Default Legend Image')
+    setup_parameter_exists(config_hash, 'Legend Definitions')
+    #setup_parameter_exists(config_hash, 'Legend Help Text')
   
     puts ""
 
     puts "IMAGE FILE REQUIREMENTS"
+    
+    if study_identifier.nil?
+      puts "Study Identifier required to check image file requirements".colorize(:red)
+    else
 
-    images_folder_exists = Dir.exists?(Rails.root.join("app/assets/images/studies", study_identifier))
-    images_folder_message = "#{Rails.root.join("app/assets/images/studies", study_identifier)} exists: "
-    images_folder_message_color = images_folder_exists ? :green : :red
+      images_folder_exists = Dir.exists?(Rails.root.join("app/assets/images/studies", study_identifier))
+      images_folder_message = "#{Rails.root.join("app/assets/images/studies", study_identifier)} exists: "
+      images_folder_message_color = images_folder_exists ? :green : :red
 
-    puts images_folder_message + images_folder_exists.to_s.colorize(images_folder_message_color)
+      puts images_folder_message + images_folder_exists.to_s.colorize(images_folder_message_color)
 
-    legend_image = setup_hash['Default Legend Image'].join
+      study_image_exists("studies/#{study_identifier}/#{legend_image}")
 
-    study_image_exists("studies/#{study_identifier}/#{legend_image}")
-
-    setup_hash['Legend Definitions'].each do |ld|
-      study_image_exists("studies/#{study_identifier}/#{ld}_#{legend_image}")
+      config_hash['Legend Definitions'].each do |ld|
+        study_image_exists("studies/#{study_identifier}/#{ld}_#{legend_image}")
+      end
     end
 
   puts "##############  REQUIREMENTS  ##############"
   
   2.times { puts ""}
-
-
 end

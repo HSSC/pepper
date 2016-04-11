@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  study_identifier: MyString
+  total_n: 1
+  default_set_title: MyString
+  default_set_subtitle: MyText
+  default_legend_description: MyText
+  default_legend_image: MyString
+  legend_definitions: MyText
+  legend_help_text: MyText
+
+two:
+  study_identifier: MyString
+  total_n: 1
+  default_set_title: MyString
+  default_set_subtitle: MyText
+  default_legend_description: MyText
+  default_legend_image: MyString
+  legend_definitions: MyText
+  legend_help_text: MyText
