@@ -1,11 +1,15 @@
 require 'csv'
+require 'colorize'
 
 desc "Verify study setup document is in the correct format"
 task verify: :environment do
 
   def extract_and_display_setup_value(setup_file, setup_hash)
-    k,v = setup_file.shift
-    puts "#{k}: #{v}"
+    row = setup_file.shift
+    k = row.shift
+    v = row.compact
+
+    puts "#{k}: #{v.join(', ')}"
     setup_hash[k] = v
   end
 
@@ -49,6 +53,21 @@ task verify: :environment do
     descriptors 
   end
 
+  def study_image_exists(path)
+    file = Rails.root.join("app/assets/images", path)
+    exists = File.exists?(file)
+    color = exists ? :green : :red
+    message = "#{file} exists: " + exists.to_s.colorize(color)
+
+    puts message
+  end
+
+  def setup_parameter_exists(setup_hash, param)
+    parameter = setup_hash[param].join(', ') rescue nil # we don't want join to fail, we want to see the message
+    puts "#{param}: #{parameter.nil? ? "false".colorize(:red) : parameter.colorize(:green)}"
+    parameter
+  end
+
   setup_file_name = ENV['filename']  #located in config/studies folder
   raise "Unable to find config/studies/#{setup_file_name}.csv in config/studies folder" unless File.exists?(Rails.root.join("config/studies/#{setup_file_name}.csv"))
 
@@ -57,8 +76,8 @@ task verify: :environment do
   # [["Begin Setup (DO NOT REMOVE LINES 1-10)", nil, nil, nil],
   # ["Study Identifier", "ABC123", nil, nil], 
   # ["Total N", "200", nil, nil], 
-  # ["Default Question Title", "My Title", nil, nil], 
-  # ["Default Question Subtitle", "My Subtitle", nil, nil], 
+  # ["Default Set Title", "My Title", nil, nil], 
+  # ["Default Set Subtitle", "My Subtitle", nil, nil], 
   # ["Default Legend Description", "My Legend", nil, nil], 
   # ["Default Legend Image", "person.png", "Additional image format example R_person.png", nil], 
   # ["Legend Definitions", "R", "Y", nil], 
@@ -82,13 +101,13 @@ task verify: :environment do
   
   setup_file.shift  # remove first line, it's just descriptive text and a warning
   
-  puts "##############  PARSED VALUES ###########"
+  puts "##############  SURVEY SETUP ###########"
   setup_hash = {}
 
-  8.times do
+  until setup_file.first.at(0) == 'End Setup (DO NOT REMOVE)' do
     extract_and_display_setup_value(setup_file, setup_hash)
   end
-  puts "##############  PARSED VALUES ###########"
+  puts "##############  SURVEY SETUP ###########"
 
   # iterate over the setup file until we get to where the sets begin
   setup_file.shift until setup_file.first.at(0) == 'Begin Sets (DO NOT REMOVE)'
@@ -112,4 +131,42 @@ task verify: :environment do
   end
   
   2.times { puts ""}
+
+  # lets begin testing the configuration
+
+  puts "##############  REQUIREMENTS  ##############"
+    puts "SETUP REQUIREMENTS"
+
+    study_identifier = setup_parameter_exists(setup_hash, 'Study Identifier')
+    setup_parameter_exists(setup_hash, 'Total N')
+    setup_parameter_exists(setup_hash, 'Default Set Title')
+    setup_parameter_exists(setup_hash, 'Default Set Subtitle')
+    setup_parameter_exists(setup_hash, 'Default Legend Description')
+    setup_parameter_exists(setup_hash, 'Default Legend Image')
+    setup_parameter_exists(setup_hash, 'Legend Definitions')
+    setup_parameter_exists(setup_hash, 'Legend Help Text')
+  
+    puts ""
+
+    puts "IMAGE FILE REQUIREMENTS"
+
+    images_folder_exists = Dir.exists?(Rails.root.join("app/assets/images/studies", study_identifier))
+    images_folder_message = "#{Rails.root.join("app/assets/images/studies", study_identifier)} exists: "
+    images_folder_message_color = images_folder_exists ? :green : :red
+
+    puts images_folder_message + images_folder_exists.to_s.colorize(images_folder_message_color)
+
+    legend_image = setup_hash['Default Legend Image'].join
+
+    study_image_exists("studies/#{study_identifier}/#{legend_image}")
+
+    setup_hash['Legend Definitions'].each do |ld|
+      study_image_exists("studies/#{study_identifier}/#{ld}_#{legend_image}")
+    end
+
+  puts "##############  REQUIREMENTS  ##############"
+  
+  2.times { puts ""}
+
+
 end
