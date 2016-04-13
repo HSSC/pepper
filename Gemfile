@@ -48,4 +48,7 @@ group :development do
 end
 
 gem 'colorize'
+gem 'haml'
+gem 'sass'
+gem 'bootstrap'
 

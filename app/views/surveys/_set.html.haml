@@ -1,0 +1,29 @@
+.row
+  = question_col_offset(@question_set.questions.size)
+  - @question_set.questions.each do |q|
+    - total_displayed = 0
+    .question{class: question_col_class(@question_set.questions.size)}
+      - per_line = 0
+      - q.dimensions.each do |k,d|
+        - d['COUNT'].to_i.times do 
+          - total_displayed += 1
+          - if per_line == 20
+            %br
+            - per_line = 0
+          - per_line += 1
+          = image_tag "studies/#{@survey.study_identifier}/#{d['DIMENSION']}_#{@survey.default_legend_image}", :style => 'width:20px;'
+      - (@survey.total_n - total_displayed).times do
+        - if per_line == 20
+          %br
+          - per_line = 0
+        - per_line += 1
+        = image_tag "studies/#{@survey.study_identifier}/G_#{@survey.default_legend_image}", :style => 'width:20px;'
+  = question_col_offset(@question_set.questions.size)
+.row
+  = question_col_offset(@question_set.questions.size)
+  - @question_set.questions.each_with_index do |q, index|
+    .question{class: question_col_class(@question_set.questions.size)}
+      %span.option_text= "Option #{index+1}"
+      = f.fields_for :responses, @response_set.responses.build do |r|
+        = r.radio_button :question_id, q.id
+  = question_col_offset(@question_set.questions.size)
