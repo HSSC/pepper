@@ -51,4 +51,3 @@ gem 'colorize'
 gem 'haml'
 gem 'sass'
 gem 'bootstrap'
-
