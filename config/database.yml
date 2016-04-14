@@ -12,7 +12,7 @@ default: &default
 development:
   adapter: mysql2
   username: root
-  password: doc1291
+  password: password
   database: pepper_development
 
 # Warning: The database defined as "test" will be erased and
