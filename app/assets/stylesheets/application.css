@@ -1,2 +1,5 @@
-@import 'surveys';
-@import 'bootstrap';
+/*
+ *= require_self
+ *= require bootstrap/dist/css/bootstrap
+ *= require main
+ */
