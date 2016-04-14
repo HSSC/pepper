@@ -5,9 +5,11 @@ Survey:
 Response Set:
 = @response_set.user_token
 %br
-.container-fluid
-  = form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token) do |f|
-    .row= render "set_header"
+= form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token) do |f|
+  .row
+    = render "set_header"
+  .row
     = render "set", f: f
-    .row
-      .col-md-8.col-md-offset-2.submit_choice= f.submit "Save My Choice", class: "btn btn-primary btn-block"
+  .row
+    .col-md-8.col-md-offset-2.submit_choice
+      = f.submit "Save My Choice", class: "btn btn-primary btn-block"
