@@ -1,10 +1,3 @@
-Survey:
-= @survey.study_identifier
-%br
-
-Response Set:
-= @response_set.user_token
-%br
 = form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token) do |f|
   .row
     = render "set_header"
