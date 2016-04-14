@@ -60,7 +60,7 @@ task load: :environment do
   end
 
   setup_file_name = ENV['filename']  #located in config/studies folder
-  raise "Unable to find config/studies/#{setup_file_name}.csv in config/studies folder" unless File.exists?(Rails.root.join("config/studies/#{setup_file_name}.csv"))
+  raise "Unable to find config/studies/#{setup_file_name}.csv in config/studies folder\nUsage: rake load filename=abc123".colorize(:red) unless File.exists?(Rails.root.join("config/studies/#{setup_file_name}.csv"))
 
   setup_file = CSV.read(Rails.root.join("config/studies/#{setup_file_name}.csv"))
 
