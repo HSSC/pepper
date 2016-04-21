@@ -18,3 +18,5 @@
 
 config/studies/*
 *.swp
+
+config/database.yml
