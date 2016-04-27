@@ -10,7 +10,7 @@
 
 * rake db:migrate
 
-* Copy your configuration file (abc123.csv) in to config/studies/  (you can also edit the template found in that folder, should be saved as a CSV)
+* Copy your configuration file (abc123.csv) in to config/studies/  (you can also edit the template found in that folder, should be saved as a CSV, example found at https://github.com/HSSC/pepper_test_data)
 
 * Copy your images to app/assets/images/studies/STUDY_IDENTIFIER (this is set in the configuration file as 'Study Identifier')
 

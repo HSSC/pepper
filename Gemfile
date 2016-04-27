@@ -50,3 +50,5 @@ end
 gem 'colorize'
 gem 'haml'
 gem 'sass'
+
+gem 'paperclip'

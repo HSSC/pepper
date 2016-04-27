@@ -1,13 +1,25 @@
-.set_title {
-  font-size: 45px;
+.set_title, .set_subtitle {
   font-family: sans, helvetica, serif;
   display: block;
   color: #808080;
   text-align: center;
 }
 
+.set_title {
+  font-size: 45px;
+}
+
+.set_subtitle {
+  font-size: 35px;
+}
+
 .question, .submit_choice {
+  margin-bottom: 10px;
   text-align: center;
+   
+  img {
+    display: inline;
+  }
 }
 
 .add-space-at-top {

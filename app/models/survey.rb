@@ -8,6 +8,7 @@ class Survey < ActiveRecord::Base
   validates :legend_definitions, presence: true
 
   has_many :question_sets
+  has_many :questions, :through => :question_sets
 
   def next_question_set
     question_set = question_sets.where(used: false).first

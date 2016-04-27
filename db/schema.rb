@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160413120219) do
+ActiveRecord::Schema.define(version: 20160422115155) do
 
   create_table "question_sets", force: :cascade do |t|
     t.integer  "survey_id",              limit: 4
@@ -23,10 +23,14 @@ ActiveRecord::Schema.define(version: 20160413120219) do
   end
 
   create_table "questions", force: :cascade do |t|
-    t.integer  "question_set_id", limit: 4
-    t.text     "dimensions",      limit: 65535
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.integer  "question_set_id",             limit: 4
+    t.text     "dimensions",                  limit: 65535
+    t.datetime "created_at",                                null: false
+    t.datetime "updated_at",                                null: false
+    t.string   "question_image_file_name",    limit: 255
+    t.string   "question_image_content_type", limit: 255
+    t.integer  "question_image_file_size",    limit: 4
+    t.datetime "question_image_updated_at"
   end
 
   create_table "response_sets", force: :cascade do |t|
