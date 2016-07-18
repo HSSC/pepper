@@ -1,5 +1,7 @@
 == Setup
 
+* Install imagemagick and gs (mac using brew: brew install imagemagick gs)
+
 * Setup RVM 
 
 * gem install bundler
