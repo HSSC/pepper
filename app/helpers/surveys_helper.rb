@@ -1,7 +1,7 @@
 module SurveysHelper
   def display_set_header(question_set)
-    title = content_tag :span, (question_set.descriptors['T'] || question_set.survey.default_set_title), class: 'set_title'
-    subtitle = content_tag :span, (question_set.descriptors['ST'] || question_set.survey.default_set_subtitle), class: 'set_subtitle'
+    title = content_tag :span, (question_set.title.blank? ? question_set.survey.default_set_title : question_set.title), class: 'set_title'
+    subtitle = content_tag :span, (question_set.subtitle.blank? ? question_set.survey.default_set_subtitle : question_set.subtitle), class: 'set_subtitle'
 
     content_tag :div do
       title + subtitle

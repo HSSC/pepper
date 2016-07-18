@@ -7,4 +7,9 @@
       %span.option_text= "Option #{index+1}"
       = f.fields_for :responses, @response_set.responses.build do |r|
         = r.radio_button :question_id, q.id
+      .legend
+        - q.question_dimensions.each do |d|
+          .dimension
+            = image_tag d.image, :class => 'img-responsive'
+            = d.legend_description
   = question_col_offset(@question_set.questions.size)

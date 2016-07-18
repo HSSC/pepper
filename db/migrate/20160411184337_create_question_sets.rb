@@ -3,7 +3,8 @@ class CreateQuestionSets < ActiveRecord::Migration
     create_table :question_sets do |t|
       t.integer :survey_id
       t.string :participant_identifier
-      t.text :descriptors
+      t.string :title
+      t.string :subtitle
       t.boolean :used
 
       t.timestamps null: false

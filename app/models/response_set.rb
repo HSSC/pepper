@@ -6,6 +6,7 @@ class ResponseSet < ActiveRecord::Base
 
   validates :survey_id, presence: true
   validates :user_token, uniqueness: true
+  validates :participant_identifier, presence: true
 
   accepts_nested_attributes_for :responses
 

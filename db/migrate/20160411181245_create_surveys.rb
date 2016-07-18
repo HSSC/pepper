@@ -5,12 +5,10 @@ class CreateSurveys < ActiveRecord::Migration
       t.integer :total_n
       t.string :default_set_title
       t.text :default_set_subtitle
-      t.text :default_legend_description
-      t.string :default_legend_image
-      t.text :legend_definitions
-      t.text :legend_help_text
 
       t.timestamps null: false
     end
+
+    add_attachment :surveys, :default_legend_image
   end
 end

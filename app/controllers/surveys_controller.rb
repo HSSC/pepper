@@ -14,7 +14,7 @@ class SurveysController < ApplicationController
 
     if @question_set.nil?
       @response_set.update_attribute(:completed_at, Time.now)
-      render :complete 
+      render :complete
     end
   end
 
