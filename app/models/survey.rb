@@ -9,7 +9,7 @@ class Survey < ActiveRecord::Base
   has_attached_file :default_legend_image
   do_not_validate_attachment_file_type :default_legend_image
 
-  accepts_nested_attributes_for :question_sets
+  accepts_nested_attributes_for :question_sets, allow_destroy: true
 
   def next_question_set
     question_set = question_sets.where(used: false).first

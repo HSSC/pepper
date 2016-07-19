@@ -1,6 +1,8 @@
 ActiveAdmin.register Survey do
 
-  permit_params :study_identifier, :total_n, :default_set_title, :default_set_subtitle, :default_legend_image
+  menu priority: 1
+
+  permit_params :study_identifier, :total_n, :default_set_title, :default_set_subtitle, :default_legend_image, question_sets_attributes: [:id, :participant_identifier, :title, :subtitle, :_destroy]
 
   filter :study_identifier
 
@@ -17,17 +19,17 @@ ActiveAdmin.register Survey do
   end
 
   form do |f|
-    semantic_errors
-    inputs "Survey Details" do
+    semantic_errors *f.object.errors.keys
+    inputs "Details" do
       input :study_identifier
       input :total_n
       input :default_set_title
       input :default_set_subtitle
-      input :default_legend_image, :as => :file, :hint => image_tag(f.object.default_legend_image.url)
+      input :default_legend_image
     end
 
-    inputs "Question Sets" do
-      has_many :question_sets, heading: 'Question Sets', allow_destroy: true, new_record: true do |a|
+    inputs "Sets" do
+      has_many :question_sets, heading: '', allow_destroy: true, new_record: true do |a|
         a.input :participant_identifier
         a.input :title
         a.input :subtitle
@@ -37,7 +39,7 @@ ActiveAdmin.register Survey do
   end
 
   show do |s|
-    panel "Survey Details" do
+    panel "Details" do
       attributes_table_for survey do
         row :study_identifier
         row :total_n
@@ -48,6 +50,15 @@ ActiveAdmin.register Survey do
         end
       end
     end
+
+    panel "Sets" do
+      table_for survey.question_sets do
+        column :participant_identifier
+        column :title
+        column :subtitle
+      end
+    end
+
     active_admin_comments
   end
 end

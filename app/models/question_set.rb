@@ -5,4 +5,5 @@ class QuestionSet < ActiveRecord::Base
   validates :participant_identifier, presence: true
   validates :survey, presence: true
 
+  accepts_nested_attributes_for :questions, allow_destroy: true
 end

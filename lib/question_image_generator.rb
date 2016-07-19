@@ -20,9 +20,10 @@ module QuestionImageGenerator
       total_displayed = 0
 
       self.question_dimensions.each do |qd|
+        next if qd.marked_for_destruction?
         total_displayed += qd.count
         qd.count.times do
-          script += " #{Rails.root.join(qd.image.path)}"
+          script += " #{Rails.root.join(qd.image.staged_path || qd.image.path)}"
         end
       end
 

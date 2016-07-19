@@ -6,5 +6,7 @@ Rails.application.routes.draw do
 
   get 'surveys/:study_identifier/take/:user_token' => 'surveys#index'
 
+  resources :messages, only: [:show]
+
   root 'surveys#index'
 end

@@ -11,21 +11,47 @@
 
 .set_subtitle {
   font-size: 35px;
+  padding: 10px 0;
 }
 
 .question, .submit_choice {
   margin-bottom: 10px;
   text-align: center;
-   
+
   img {
     display: inline;
   }
 }
 
+.option {
+  margin-top: 20px;
+
+  .option-text {
+    font-size: 20px;
+  }
+}
 .add-space-at-top {
   padding-top: 90px;
 }
 
 .add-space-at-bottom {
   padding-bottom: 50px;
+}
+
+.legend {
+  height: 100px;
+  padding-top: 20px;
+}
+
+/* centered columns styles */
+.row-centered {
+    text-align:center;
+}
+.col-centered {
+    display:inline-block;
+    float:none;
+    /* reset the text-align */
+    text-align:center;
+    /* inline-block space fix */
+    margin-right:-4px;
 }
