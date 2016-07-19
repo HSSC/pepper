@@ -39,7 +39,6 @@
 }
 
 .legend {
-  height: 100px;
   padding-top: 20px;
 }
 
@@ -54,4 +53,9 @@
     text-align:center;
     /* inline-block space fix */
     margin-right:-4px;
+    vertical-align: top;
+}
+
+.popover{
+  max-width: 400px; /* Max Width of the popover (depending on the container!) */
 }

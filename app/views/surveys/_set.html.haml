@@ -2,18 +2,23 @@
   = question_col_offset(@question_set.questions.size)
   - @question_set.questions.each_with_index do |q, index|
     .question{class: question_col_class(@question_set.questions.size)}
-      = image_tag q.question_image, :class => 'img-responsive'
+      = image_tag q.question_image, :class => 'img-responsive', data: {toggle: 'popover', content: "#{q.panel_description}", trigger: 'hover'}, title: "#{q.panel_title}"
       %br
       .option
         %span.option-text
           = "Option #{index+1}"
           = f.fields_for :responses, @response_set.responses.build do |r|
-            = r.radio_button :question_id, q.id
+            = r.radio_button :question_id, q.id, name: 'response_set[responses_attributes][0][question_id]'
       .legend
         .row.row-centered
+          - total_displayed = 0
           - q.question_dimensions.each do |d|
-            .col-md-2.col-centered
-              = image_tag d.image, :class => 'img-responsive'
+            - total_displayed += d.count
+            .col-md-4.col-centered
+              = image_tag d.image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(d.count, @question_set.survey.total_n)
               = link_to message_path(d), remote: true do
                 = d.legend_description
+          .col-md-4.col-centered
+            = image_tag @question_set.survey.default_legend_image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(@question_set.survey.total_n - total_displayed, @question_set.survey.total_n)
+            = @question_set.survey.default_legend_description
   = question_col_offset(@question_set.questions.size)

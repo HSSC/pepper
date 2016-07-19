@@ -3,8 +3,10 @@ class Survey < ActiveRecord::Base
   validates :total_n, presence: true, numericality: true
   validates :default_legend_image, presence: true
 
-  has_many :question_sets
+  has_many :question_sets, dependent: :destroy
   has_many :questions, :through => :question_sets
+
+  after_update :regenerate_question_images, if: :total_n_changed?
 
   has_attached_file :default_legend_image
   do_not_validate_attachment_file_type :default_legend_image
@@ -25,5 +27,18 @@ class Survey < ActiveRecord::Base
 
   def title
     study_identifier
+  end
+
+  private
+
+  def regenerate_question_images
+    puts "#"*50
+    puts "inside"
+    puts "#"*50
+    self.questions.each do |q|
+      puts "regen"
+      q.save
+      #q.generate_image
+    end
   end
 end

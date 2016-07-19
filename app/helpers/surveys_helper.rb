@@ -25,4 +25,10 @@ module SurveysHelper
       'col-md-4'
     end
   end
+
+  def legend_tooltip_title used, total
+    percentage = used/total.to_f * 100
+
+    "#{used} out of #{total} (#{percentage}%)"
+  end
 end

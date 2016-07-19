@@ -2,7 +2,7 @@ ActiveAdmin.register Survey do
 
   menu priority: 1
 
-  permit_params :study_identifier, :total_n, :default_set_title, :default_set_subtitle, :default_legend_image, question_sets_attributes: [:id, :participant_identifier, :title, :subtitle, :_destroy]
+  permit_params :study_identifier, :total_n, :default_set_title, :default_set_subtitle, :default_legend_image, :default_legend_description, question_sets_attributes: [:id, :participant_identifier, :title, :subtitle, :_destroy]
 
   filter :study_identifier
 
@@ -12,8 +12,9 @@ ActiveAdmin.register Survey do
     column :total_n
     column :default_set_title
     column :default_set_subtitle
+    column :default_legend_description
     column :default_legend_image do |s|
-      image_tag(s.default_legend_image.url)
+      image_tag(s.default_legend_image.present? ? s.default_legend_image.url : '/images/original/missing.png')
     end
     actions
   end
@@ -25,7 +26,8 @@ ActiveAdmin.register Survey do
       input :total_n
       input :default_set_title
       input :default_set_subtitle
-      input :default_legend_image
+      input :default_legend_description
+      input :default_legend_image, :as => :file, :hint => image_tag(f.object.default_legend_image.present? ? f.object.default_legend_image.url : '/images/original/missing.png')
     end
 
     inputs "Sets" do
@@ -45,8 +47,9 @@ ActiveAdmin.register Survey do
         row :total_n
         row :default_set_title
         row :default_set_subtitle
+        row :default_legend_description
         row :default_legend_image do
-          image_tag(s.default_legend_image.url)
+          image_tag(s.default_legend_image.present? ? s.default_legend_image.url : '/images/original/missing.png')
         end
       end
     end
