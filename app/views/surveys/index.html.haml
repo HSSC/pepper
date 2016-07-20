@@ -1,26 +1,57 @@
-.container
+.container.index-page
   .header.clearfix
-    %h3.text-muted
-      Choice-based Conjoint Analysis with Probability Display
-  .jumbotron
-    %p.lead
+    %h2.text-muted
+      .title.row-centered
+        %span.dark P
+        ulmonary
+        &nbsp;
+        %span.dark E
+        mbolism
+        &nbsp;
+        %span.dark P
+        revention
+        &nbsp;
+        after
+        &nbsp;
+        Hi
+        %span.dark P
+        &nbsp;
+        and
+        &nbsp;
+        Kne
+        %span.dark E
+        &nbsp;
+        %span.dark R
+        eplacement:
+
+      .row-centered
+        Balancing Safety and Effectiveness
+        %br
+        %br
+        The PEPPER Trial
+  .panel.panel-default
+    .panel-heading
       About this study
-    .row
-      .col-md-12
-        %ul
-          %li You are about to have a hip or knee replacement operation. When the joint replacement parts are attached to the bones, they disturb the bone marrow. When this happens, the fatty marrow stimulates blood clotting. As a result, about 85% of patients will make blood clots in the veins of the leg after a joint replacement operation. Sometimes these blood clots can travel to the lung, called a pulmonary embolism (PE), and cause a patient to die.
-          %li Because of this it has become standard practice to give patients a blood thinner to reduce the risk of blood clots that occur after joint replacement surgery. There are many types of blood thinners; some are very strong and others are more mild. Stronger blood thinners are best at reducing blood clots, but also cause more bleeding from the surfaces of the bone during the joint replacement operation. The weaker blood thinners cause less bleeding but may allow more blood clots to form.
-          %li There is no clear choice as to which blood thinner is the best one. The ideal medicine will produce just the right balance between thinning the blood enough to prevent blood clots, but not thinning the blood so much that you bleed too much.
-          %li We are interested in your preferences regarding the side effects, risks, and benefits of the different blood thinners. Knowing that information, we are also interested in which blood thinner you would rather have given the tradeoffs of risk and benefit that happens with each different blood thinner.
+    .panel-body
+      .row
+        .col-md-12
+          %ul
+            %li You are about to have a hip or knee replacement operation. When the joint replacement parts are attached to the bones, they disturb the bone marrow. When this happens, the fatty marrow stimulates blood clotting. As a result, about 85% of patients will make blood clots in the veins of the leg after a joint replacement operation. Sometimes these blood clots can travel to the lung, called a pulmonary embolism (PE), and cause a patient to die.
+            %li Because of this it has become standard practice to give patients a blood thinner to reduce the risk of blood clots that occur after joint replacement surgery. There are many types of blood thinners; some are very strong and others are more mild. Stronger blood thinners are best at reducing blood clots, but also cause more bleeding from the surfaces of the bone during the joint replacement operation. The weaker blood thinners cause less bleeding but may allow more blood clots to form.
+            %li There is no clear choice as to which blood thinner is the best one. The ideal medicine will produce just the right balance between thinning the blood enough to prevent blood clots, but not thinning the blood so much that you bleed too much.
+            %li We are interested in your preferences regarding the side effects, risks, and benefits of the different blood thinners. Knowing that information, we are also interested in which blood thinner you would rather have given the tradeoffs of risk and benefit that happens with each different blood thinner.
 
-  .jumbotron
-    %p.lead
+  .panel.panel-default
+    .panel-heading
       How to take this survey
-    .row
-      .col-md-12
-        %ul
-          %li We will ask you a series of complex questions illustrated using graphs. There are no right or wrong answers but we do need show you these risks visually. Many people do not have much experience with understanding what it means when some says there is a 5% chance of something happening. So we will start with a few questions testing your understanding and if it seems like you need help, we will let you watch a few videos prior to our test.
-          %li The test takes about 20 minutes to complete. You may stop and take a break at any time, but we need you to finish the test if at all possible. You will find that as you practice making decisions, your values (how you weight risk and benefit) will become more clear to you.
+    .panel-body
+      .row
+        .col-md-12
+          %ul
+            %li We will ask you a series of complex questions illustrated using graphs. There are no right or wrong answers but we do need show you these risks visually. Many people do not have much experience with understanding what it means when some says there is a 5% chance of something happening. So we will start with a few questions testing your understanding and if it seems like you need help, we will let you watch a few videos prior to our test.
+            %li The test takes about 20 minutes to complete. You may stop and take a break at any time, but we need you to finish the test if at all possible. You will find that as you practice making decisions, your values (how you weight risk and benefit) will become more clear to you.
 
-      .col-md-4
-        = link_to 'Take Survey', survey_new_path('Demo'), class: 'btn btn-lg btn-success'
+      .row.row-centered
+        .col-md-12
+          %br
+          = link_to 'Take Survey', survey_new_path('Demo'), class: 'btn btn-lg btn-success'
