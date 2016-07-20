@@ -13,4 +13,9 @@ class ResponseSet < ActiveRecord::Base
   def unanswered_question_sets
     QuestionSet.where(survey_id: survey_id, participant_identifier: participant_identifier).where.not(id: responses.map{|r| r.question.question_set_id}.uniq)
   end
+
+  def progress_bar_percentage
+    total = QuestionSet.where(survey_id: survey_id, participant_identifier: participant_identifier).count
+    (total - unanswered_question_sets.count)/total.to_f * 100
+  end
 end

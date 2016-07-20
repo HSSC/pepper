@@ -12,6 +12,9 @@ class SurveysController < ApplicationController
     ### grab the next question set
     @question_set = @response_set.unanswered_question_sets.first
 
+    ### grab the progress bar percentage
+    @progress_bar_percentage = @response_set.progress_bar_percentage
+
     if @question_set.nil?
       @response_set.update_attribute(:completed_at, Time.now)
       render :complete
