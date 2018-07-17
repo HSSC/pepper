@@ -4,6 +4,11 @@
     .question{class: question_col_class(@question_set.questions.size)}
       = image_tag q.question_image, :class => 'img-responsive', data: {toggle: 'popover', content: "#{q.panel_description}", trigger: 'hover'}, title: "#{q.panel_title}"
       %br
+      - if q.question_attributes.present?
+        +
+        %br
+        - q.question_attributes.each do |qa|
+          .question_attribute{data: {toggle: 'popover', placement: 'top', content: "#{qa.panel_description}", trigger: 'hover'}, title: "#{qa.panel_title}"}= qa.description
       .option
         %span.option-text
           = "Option #{index+1}"
@@ -16,9 +21,11 @@
             - total_displayed += d.count
             .col-md-4.col-centered
               = image_tag d.image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(d.count, @question_set.survey.total_n)
+              %br
               = link_to message_path(d), remote: true do
                 = d.legend_description
           .col-md-4.col-centered
             = image_tag @question_set.survey.default_legend_image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(@question_set.survey.total_n - total_displayed, @question_set.survey.total_n)
+            %br
             = @question_set.survey.default_legend_description
   = question_col_offset(@question_set.questions.size)

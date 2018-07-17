@@ -57,3 +57,5 @@ gem 'paperclip'
 #gem 'rails_admin', github: 'sferik/rails_admin', ref: '49aafbb'
 gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'devise'
+
+gem 'seed-fu'
