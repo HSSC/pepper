@@ -14,7 +14,7 @@
       qd.question_id = 3
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Symptomatic clot in the leg"
+      qd.legend_description = "Implant removal due to an infection, caused by major bleeding: Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
       qd.help_text_description = "Long stuff"
     end
@@ -26,7 +26,7 @@
       qd.question_id = 3
       qd.count = 1
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung"
+      qd.legend_description = "Life threatening clot in the lung:  Risk of life threatening clot in the lung"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
       qd.help_text_description = "Long stuff"
     end
@@ -48,7 +48,7 @@
       qd.question_id = 4
       qd.count = 2
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Symptomatic clot in the leg"
+      qd.legend_description = "Implant removal due to an infection, caused by major bleeding: Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
       qd.help_text_description = "Long stuff"
     end
@@ -60,7 +60,7 @@
       qd.question_id = 4
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung"
+      qd.legend_description = "Life threatening clot in the lung:  Risk of life threatening clot in the lung"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
       qd.help_text_description = "Long stuff"
     end
