@@ -12,7 +12,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 23
       qd.question_id = 15
-      qd.count = 0
+      qd.count = 1
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -20,17 +20,13 @@
     end
     ### End QuestionDimension id:5 ###
 
-    ### Begin QuestionDimension id:6 ###
-    QuestionDimension.seed do |qd|
-      qd.id = 24
-      qd.question_id = 15
-      qd.count = 1
-      qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+    QuestionAttribute.seed do |qa|
+      qa.id = 9
+      qa.question_id = 15
+      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
+      qa.panel_title = "A blood test is required"
+      qa.panel_description = "A blood test is required"
     end
-    ### End QuestionDimension id:6 ###
 
   ### End Question id:5 ###
 
@@ -44,9 +40,9 @@
 
     ### Begin QuestionDimension id:7 ###
     QuestionDimension.seed do |qd|
-      qd.id = 25
+      qd.id = 24
       qd.question_id = 16
-      qd.count = 2
+      qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -54,17 +50,13 @@
     end
     ### End QuestionDimension id:7 ###
 
-    ### Begin QuestionDimension id:8 ###
-    QuestionDimension.seed do |qd|
-      qd.id = 26
-      qd.question_id = 16
-      qd.count = 0
-      qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+    QuestionAttribute.seed do |qa|
+      qa.id = 10
+      qa.question_id = 16
+      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
+      qa.panel_title = "No blood test is required"
+      qa.panel_description = "No blood test is required"
     end
-    ### End QuestionDimension id:8 ###
 
   ### End Question id:6 ###
 

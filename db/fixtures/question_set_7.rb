@@ -21,7 +21,7 @@
     ### End QuestionDimension id:5 ###
 
     QuestionAttribute.seed do |qa|
-      qa.id = 5
+      qa.id = 7
       qa.question_id = 13
       qa.description = "A copay that ranges from $50- $200"
       qa.panel_title = "Option 1 Copay"
@@ -42,7 +42,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 22
       qd.question_id = 14
-      qd.count = 2
+      qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -51,7 +51,7 @@
     ### End QuestionDimension id:7 ###
 
     QuestionAttribute.seed do |qa|
-      qa.id = 6
+      qa.id = 8
       qa.question_id = 14
       qa.description = "A copay that ranges from $50- $200"
       qa.panel_title = "Option 1 Copay"

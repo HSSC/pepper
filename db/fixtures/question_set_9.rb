@@ -24,7 +24,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 28
       qd.question_id = 17
-      qd.count = 1
+      qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
       qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -46,7 +46,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 29
       qd.question_id = 18
-      qd.count = 2
+      qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"

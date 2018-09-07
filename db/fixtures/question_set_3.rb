@@ -12,7 +12,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 7
       qd.question_id = 5
-      qd.count = 0
+      qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -24,7 +24,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 8
       qd.question_id = 5
-      qd.count = 1
+      qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -46,7 +46,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 9
       qd.question_id = 6
-      qd.count = 2
+      qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
@@ -58,7 +58,7 @@
     QuestionDimension.seed do |qd|
       qd.id = 10
       qd.question_id = 6
-      qd.count = 0
+      qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
       qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
