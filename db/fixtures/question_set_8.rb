@@ -15,17 +15,17 @@
       qd.count = 1
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:5 ###
 
     QuestionAttribute.seed do |qa|
-      qa.id = 9
+      qa.id = 12
       qa.question_id = 15
-      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qa.panel_title = "A blood test is required"
-      qa.panel_description = "A blood test is required"
+      qa.description = "A blood test is required"
+      qa.panel_title = "Option 1 blood test"
+      qa.panel_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
     end
 
   ### End Question id:5 ###
@@ -45,17 +45,17 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:7 ###
 
     QuestionAttribute.seed do |qa|
-      qa.id = 10
+      qa.id = 13
       qa.question_id = 16
-      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qa.panel_title = "No blood test is required"
-      qa.panel_description = "No blood test is required"
+      qa.description = "No blood test is required"
+      qa.panel_title = "Option 2 blood test"
+      qa.panel_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
     end
 
   ### End Question id:6 ###

@@ -11,7 +11,7 @@ end
 
 # we have 10 scenarios or question_sets
 
-10.times do |num|
+9.times do |num|
   QuestionSet.seed do |qs|
     qs.id = num+1
     qs.survey_id = 1

@@ -15,8 +15,8 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:1 ###
 
@@ -47,8 +47,8 @@
       qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:2 ###
 

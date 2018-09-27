@@ -15,17 +15,17 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:5 ###
 
     QuestionAttribute.seed do |qa|
       qa.id = 5
       qa.question_id = 11
-      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qa.panel_title = "A blood test is required"
-      qa.panel_description = "A blood test is required"
+      qa.description = "A blood test is required"
+      qa.panel_title = "Option 1 blood test"
+      qa.panel_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
     end
 
   ### End Question id:5 ###
@@ -45,17 +45,17 @@
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:7 ###
 
     QuestionAttribute.seed do |qa|
       qa.id = 6
       qa.question_id = 12
-      qa.description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
-      qa.panel_title = "No blood test is required"
-      qa.panel_description = "No blood test is required"
+      qa.description = "No blood test is required"
+      qa.panel_title = "Option 2 blood test"
+      qa.panel_description = "Blood test requiring a visit to the provider twice a week for 4 weeks"
     end
 
   ### End Question id:6 ###

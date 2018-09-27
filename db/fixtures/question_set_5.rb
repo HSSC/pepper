@@ -15,8 +15,8 @@
       qd.count = 2
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:1 ###
 
@@ -37,7 +37,7 @@
     q.id = 10
     q.question_set_id = 5
     q.panel_title = 'Option 2 Profile'
-    q.panel_description = "zero patients out of 100 will experience this bleeding event"
+    q.panel_description = "Zero patients out of 100 will experience this bleeding event"
   end
 
     ### Begin QuestionDimension id:2 ###
@@ -47,8 +47,8 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:2 ###
 

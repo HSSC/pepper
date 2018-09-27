@@ -15,8 +15,8 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:5 ###
 
@@ -27,8 +27,8 @@
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
       qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:6 ###
 
@@ -49,8 +49,8 @@
       qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
       qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:7 ###
 
@@ -61,8 +61,8 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
       qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
-      qd.help_text = "https://i.ytimg.com/vi/kfFsGiDda0A/hqdefault.jpg"
-      qd.help_text_description = "Long stuff"
+      qd.help_text = ""
+      qd.help_text_description = ""
     end
     ### End QuestionDimension id:8 ###
 

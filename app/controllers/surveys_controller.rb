@@ -31,8 +31,6 @@ class SurveysController < ApplicationController
   end
 
   def fetch_survey
-    puts "<>" * 1000
-    puts params.inspect
     @survey = Survey.find_by_study_identifier params[:study_identifier]
   end
 end
