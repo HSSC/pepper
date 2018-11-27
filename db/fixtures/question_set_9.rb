@@ -5,7 +5,7 @@
     q.id = 17
     q.question_set_id = 9
     q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patients out of 100 will be hospitalized for 1-2 days due to a clot in leg"
+    q.panel_description = "Zero patients out of 100 will be hospitalized for 1-2 days due to a clot in leg and 5 patients out of 100 will experience this bleeding event"
   end
 
     ### Begin QuestionDimension id:5 ###
@@ -14,9 +14,9 @@
       qd.question_id = 17
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
+      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
     end
     ### End QuestionDimension id:5 ###
 
@@ -26,9 +26,9 @@
       qd.question_id = 17
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
+      qd.legend_description = "Implant removal due to an infection, caused by major bleeding"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:6 ###
 
@@ -39,7 +39,7 @@
     q.id = 18
     q.question_set_id = 9
     q.panel_title = 'Option 2 Profile'
-    q.panel_description = "10 patients out of 100 will be hospitalized for 1-2 days due to a clot in leg"
+    q.panel_description = "10 patients out of 100 will be hospitalized for 1-2 days due to a clot in leg and zero patients out of 100 will experience this bleeding event"
   end
 
     ### Begin QuestionDimension id:7 ###
@@ -48,9 +48,9 @@
       qd.question_id = 18
       qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
+      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
     end
     ### End QuestionDimension id:7 ###
 
@@ -60,9 +60,9 @@
       qd.question_id = 18
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Implant removal due to an infection, caused by major bleeding  : Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
+      qd.legend_description = "Implant removal due to an infection, caused by major bleeding"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:8 ###
 

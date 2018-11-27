@@ -5,7 +5,7 @@
     q.id = 1
     q.question_set_id = 1
     q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patients out of 100 will experience this bleeding event"
+    q.panel_description = "Zero patients out of 100 will experience this bleeding event and will pay a $200 copay"
   end
 
     ### Begin QuestionDimension id:1 ###
@@ -14,9 +14,9 @@
       qd.question_id = 1
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
+      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding."
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood."
     end
     ### End QuestionDimension id:1 ###
 
@@ -24,9 +24,9 @@
     QuestionAttribute.seed do |qa|
       qa.id = 1
       qa.question_id = 1
-      qa.description = "$50-$200 copay"
+      qa.description = "$200 copay"
       qa.panel_title = "Option 1 Copay"
-      qa.panel_description = "This option requires between a $50 and $200 copay"
+      qa.panel_description = "$200 copay"
     end
     ### End Question Attribute id:1 ###
 
@@ -37,18 +37,18 @@
     q.id = 2
     q.question_set_id = 1
     q.panel_title = 'Option 2 Profile'
-    q.panel_description = "10 patients out of 100 will experience this bleeding event"
+    q.panel_description = "10 patients out of 100 will experience this bleeding event and not pay a copay"
   end
 
     ### Begin QuestionDimension id:2 ###
     QuestionDimension.seed do |qd|
       qd.id = 2
       qd.question_id = 2
-      qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
+      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding."
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood."
+      qd.count = 10
     end
     ### End QuestionDimension id:2 ###
 
@@ -58,7 +58,7 @@
       qa.question_id = 2
       qa.description = "No Copay"
       qa.panel_title = "Option 2 Copay"
-      qa.panel_description = "This option does not require a copay"
+      qa.panel_description = "No copay"
     end
     ### End Question Attribute id:2 ###
 

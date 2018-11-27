@@ -2,30 +2,65 @@
   = question_col_offset(@question_set.questions.size)
   - @question_set.questions.each_with_index do |q, index|
     .question{class: question_col_class(@question_set.questions.size)}
-      = image_tag q.question_image, :class => 'img-responsive', data: {toggle: 'popover', content: "#{q.panel_description}", trigger: 'hover'}, title: "#{q.panel_title}"
-      %br
-      - if q.question_attributes.present?
-        +
+      .question-border
+        %h2= q.panel_title
+        .option-text
+          %br
+          = q.panel_description
+        = image_tag q.question_image, :class => 'img-responsive' if q.question_dimensions.present?
         %br
-        - q.question_attributes.each do |qa|
-          .question_attribute{data: {toggle: 'popover', placement: 'top', content: "#{qa.panel_description}", trigger: 'hover'}, title: "#{qa.panel_title}"}= qa.description
-      .option
-        %span.option-text
-          = "Option #{index+1}"
-          = f.fields_for :responses, @response_set.responses.build do |r|
-            = r.radio_button :question_id, q.id, name: 'response_set[responses_attributes][0][question_id]'
-      .legend
-        .row.row-centered
-          - total_displayed = 0
-          - q.question_dimensions.each do |d|
-            - total_displayed += d.count
-            .col-md-4.col-centered
-              = image_tag d.image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(d.count, @question_set.survey.total_n)
-              %br
-              = link_to message_path(d), remote: true do
-                = d.legend_description
-          .col-md-4.col-centered
-            = image_tag @question_set.survey.default_legend_image, :class => 'img-responsive', data: {toggle: 'tooltip'}, title: legend_tooltip_title(@question_set.survey.total_n - total_displayed, @question_set.survey.total_n)
+        - if q.question_attributes.present?
+          - if q.question_dimensions.present? # initial plus symbol
             %br
-            = @question_set.survey.default_legend_description
+            +
+            %br
+            %br
+
+          - q.question_attributes.each_with_index do |qa, index|
+            - unless index==0
+              %br
+              +
+              %br
+              %br
+            .question_attribute= qa.description
+        .hidden-elements
+          = f.fields_for :responses, @response_set.responses.build do |r|
+            = r.radio_button :question_id, q.id, class: "question_#{index}_id"
+            = r.radio_button :weight, nil, class: "question_#{index}_weight"
   = question_col_offset(@question_set.questions.size)
+
+- q = @question_set.questions.first
+- if q.question_dimensions.present?
+  .row
+    = legend_col_offset(q.question_dimensions.size)
+    - total_displayed = 0
+    - q.question_dimensions.each do |d|
+      - total_displayed += d.count
+      .col-md-2.col-centered
+        = image_tag d.image, :class => 'img-responsive'
+        %br
+        = link_to message_path(d), remote: true, class: 'legend-description' do
+          = d.legend_description
+    .col-md-2.col-centered
+      = image_tag @question_set.survey.default_legend_image, :class => 'img-responsive'
+      %br
+      = link_to @question_set.survey.default_legend_description, "javascript:void(0);", class: 'default-legend legend-description'
+    = legend_col_offset(q.question_dimensions.size)
+
+.row
+  .col-md-12
+    %br
+    %br
+    %br
+
+    #slider
+
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br
+    %br

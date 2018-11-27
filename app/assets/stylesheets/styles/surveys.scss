@@ -24,7 +24,7 @@
 .set_title, .set_subtitle {
   font-family: sans, helvetica, serif;
   display: block;
-  color: #808080;
+  color: #000;
   text-align: center;
 }
 
@@ -36,6 +36,11 @@
 .set_subtitle {
   font-size: 20px;
   padding: 10px 0;
+}
+
+.under {
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .question, .submit_choice {
@@ -52,16 +57,31 @@
 }
 
 .question_attribute {
-  font-size: 18px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.question-border {
+  border: 3px solid #000;
+  border-radius: 12px;
 }
 
 .option {
   margin-top: 20px;
-
-  .option-text {
-    font-size: 20px;
-  }
+  padding: 20px;
+  border-top: 2px solid #000;
+  background-color: #DCDCDC;
 }
+
+.option-text {
+  font-size: 20px;
+  padding: 0 20px 20px;
+}
+
+.hidden-elements {
+  visibility: hidden;
+}
+
 .add-space-at-top {
   padding-top: 90px;
 }
@@ -74,18 +94,27 @@
   padding-top: 20px;
 }
 
+.legend-description {
+  font-size: 14px;
+}
+
 /* centered columns styles */
 .row-centered {
     text-align:center;
 }
 .col-centered {
     display:inline-block;
+    padding-left: 50px;
+    padding-right: 50px;
     float:none;
     /* reset the text-align */
     text-align:center;
     /* inline-block space fix */
-    margin-right:-4px;
     vertical-align: top;
+
+    img {
+      margin: auto;
+    }
 }
 
 .popover{
@@ -104,4 +133,52 @@
   font-size: 20px;
   line-height: 44px;
 }
+
+.rank {
+  margin-left: 35px;
+}
+
+.modal-image {
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.intro-step-2 {
+  display: none;
+}
+
+#sortable1, #sortable2 {
+  border: 1px solid #eee;
+  width: 49%;
+  min-height: 300px;
+  list-style-type: none;
+  margin: 0;
+  padding: 5px 0 0 0;
+  float: left;
+  margin-right: 10px;
+}
+
+#sortable1 li, #sortable2 li {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.2em;
+  text-align: left;
+  background: #eee;
+}
+
+/* slider styling */
+
+#slider {
+  width: 60%;
+  margin: 0 auto;
+}
+
+.noUi-value {
+  font-size: 14px !important;
+  color: #000 !important;
+  width: 70px;
+  white-space: inherit !important;
+}
+
 

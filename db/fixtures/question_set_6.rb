@@ -5,7 +5,7 @@
     q.id = 11
     q.question_set_id = 6
     q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patients out of 100 will be hospitalized for 1-2 days due to a clot in leg"
+    q.panel_description = "Zero patients out of 100 will be hospitalized for 1-2 days due to a clot in leg and a blood test is required. Blood test requiring a visit to the provider twice a week for 4 weeks"
   end
 
     ### Begin QuestionDimension id:5 ###
@@ -14,9 +14,9 @@
       qd.question_id = 11
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
+      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
     end
     ### End QuestionDimension id:5 ###
 
@@ -35,7 +35,7 @@
     q.id = 12
     q.question_set_id = 6
     q.panel_title = 'Option 2 Profile'
-    q.panel_description = "5 patients out of 100 will be hospitalized for 1-2 days due to a clot in leg"
+    q.panel_description = "5 patients out of 100 will be hospitalized for 1-2 days due to a clot in leg and no blood test is required"
   end
 
     ### Begin QuestionDimension id:7 ###
@@ -44,9 +44,9 @@
       qd.question_id = 12
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay: Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
+      qd.legend_description = "Signs of deep vein thrombosis (DVT) that leads to hospital stay"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of a clot in the leg that requires spending 1-2 days in the hospital. Results in a slow recovery of physical health"
     end
     ### End QuestionDimension id:7 ###
 

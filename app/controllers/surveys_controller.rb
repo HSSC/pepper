@@ -1,10 +1,16 @@
 class SurveysController < ApplicationController
   before_action :fetch_survey
 
+  def index
+    @user_token = params[:user_token]
+    @response_set = ResponseSet.where(user_token: params[:user_token]).first_or_create(survey: @survey, participant_identifier: 'PAT0', user_token: @user_token)
+    @ranking_order = Survey::RANKING_ORDER.shuffle
+  end
+
   def take
 
     ### find or create a response set
-    @response_set = ResponseSet.where(user_token: params[:user_token]).first_or_create(survey: @survey, participant_identifier: @survey.next_question_set.participant_identifier)
+    @response_set = ResponseSet.where(user_token: params[:user_token]).first_or_create(survey: @survey, participant_identifier: 'PAT0')
 
     ### update the response set if we have one
     @response_set.update_attributes(response_set_params) if params[:response_set]
@@ -27,7 +33,7 @@ class SurveysController < ApplicationController
   private
 
   def response_set_params
-    params.require(:response_set).permit(responses_attributes: [:question_set_id, :question_id])
+    params.require(:response_set).permit(:first, :second, :third, :fourth, :fifth, :sixth, responses_attributes: [:question_set_id, :question_id, :weight])
   end
 
   def fetch_survey

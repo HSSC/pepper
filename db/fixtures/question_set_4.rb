@@ -5,7 +5,7 @@
     q.id = 7
     q.question_set_id = 4
     q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patient out of 100 will experience this bleeding event"
+    q.panel_description = "Zero patients out of 100 will experience this bleeding event and 1 patient out of 100 will experience a life threatening clot in the lung"
   end
 
     ### Begin QuestionDimension id:5 ###
@@ -14,9 +14,9 @@
       qd.question_id = 7
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
+      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:5 ###
 
@@ -26,9 +26,9 @@
       qd.question_id = 7
       qd.count = 1
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
+      qd.legend_description = "Life threatening clot in the lung"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of life threatening clot in the lung"
     end
     ### End QuestionDimension id:6 ###
 
@@ -39,7 +39,7 @@
     q.id = 8
     q.question_set_id = 4
     q.panel_title = 'Option 2 Profile'
-    q.panel_description = "10 patients out of 100 will experience this bleeding event"
+    q.panel_description = "10 patients out of 100 will experience this bleeding event and zero patients out of 100 will experience a life threatening clot in the lung"
   end
 
     ### Begin QuestionDimension id:7 ###
@@ -48,9 +48,9 @@
       qd.question_id = 8
       qd.count = 10
       qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding: Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
+      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:7 ###
 
@@ -60,9 +60,9 @@
       qd.question_id = 8
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung Risk of life threatening clot in the lung"
+      qd.legend_description = "Life threatening clot in the lung"
       qd.help_text = ""
-      qd.help_text_description = ""
+      qd.help_text_description = "Risk of life threatening clot in the lung"
     end
     ### End QuestionDimension id:8 ###
 

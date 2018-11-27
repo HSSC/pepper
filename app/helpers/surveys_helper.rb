@@ -26,6 +26,15 @@ module SurveysHelper
     end
   end
 
+  def legend_col_offset(size)
+    case size
+    when 1
+      content_tag(:div, '', class: 'col-md-4')
+    when 2
+      content_tag(:div, '', class: 'col-md-3')
+    end
+  end
+
   def legend_tooltip_title used, total
     percentage = used/total.to_f * 100
 

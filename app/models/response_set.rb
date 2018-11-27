@@ -1,6 +1,4 @@
 class ResponseSet < ActiveRecord::Base
-  include Tokenable
-
   belongs_to :survey
   has_many :responses
 
