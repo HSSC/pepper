@@ -57,3 +57,4 @@ gem 'activeadmin', '~> 1.0.0.pre4'
 gem 'devise'
 
 gem 'seed-fu'
+gem 'videojs_rails'

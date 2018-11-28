@@ -9,8 +9,6 @@ $ ->
   $('.continue-to-survey').on 'click', (event) ->
     sortedIDs = $('#sortable2').sortable("toArray")
 
-    console.log sortedIDs.length
-
     if sortedIDs.length <= 5
       event.preventDefault()
       alert("Please select all outcomes and order them from worst to least")
@@ -35,9 +33,17 @@ $ ->
   $('.default-legend').on 'click', ->
     $('#default-message .modal').modal('show')
 
+  $('.save-response').on 'click', (event) ->
+    if $('.question_0_weight').prop('checked') == false && $('.question_1_weight').prop('checked') == false
+      event.preventDefault()
+      alert "Please select on the scale below which treatment you prefer, treatment A or B, in order to continue."
+
   if $('#slider').length
     slider = document.getElementById('slider')
-    stepValues = {0:'Definitely prefer this option', 1:'', 2:'', 3:'', 4:'', 5:'Either option is fine/no preference', 6:'', 7:'', 8:'', 9:'', 10:'Definitely prefer this option'}
+    $('.question_0_weight').prop('checked', false)
+    $('.question_1_weight').prop('checked', false)
+
+    stepValues = {0:'Definitely prefer this option', 1:'', 2:'', 3:'', 4:'', 5:'', 6:'', 7:'', 8:'', 9:'', 10:'Definitely prefer this option'}
 
     noUiSlider.create(slider, {
       start: [5],

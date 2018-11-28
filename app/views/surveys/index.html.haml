@@ -56,7 +56,11 @@
           %br
           %br
         .col-md-12
-          .row-centered= button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
+          .row-centered
+            = videojs_rails sources: { mp4: "http://pepper-pref-demo.musc.edu/pepper_final.mp4" }, width:"700"
+            %br
+            %br
+            = button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
 
   .panel.panel-default.intro-step-2
     .panel-heading
@@ -64,24 +68,12 @@
     .panel-body
       .row
         .col-md-12
-          %table.table.table-bordered
-            %thead
-              %tr
-                %th Full Description of Outcome
-                %th Brief Description of Outcome
-            %tbody
-              - @ranking_order.each do |values|
-                %tr
-                  %td= values[2]
-                  %td= values[1]
-
-        .col-md-12
           .row-centered.sortable-area
             .col-md-12
 
               %ul#sortable1.connectedSortable
                 - @ranking_order.each do |values|
-                  %li{id: values[0]}= values[1]
+                  %li{id: values[0]}= values[2]
 
               %ul#sortable2.connectedSortable
 

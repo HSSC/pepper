@@ -16,13 +16,13 @@
             %br
             %br
 
-          - q.question_attributes.each_with_index do |qa, index|
-            - unless index==0
-              %br
-              +
-              %br
-              %br
-            .question_attribute= qa.description
+            - q.question_attributes.each_with_index do |qa, index|
+              - unless index==0
+                %br
+                +
+                %br
+                %br
+              .question_attribute= qa.description
         .hidden-elements
           = f.fields_for :responses, @response_set.responses.build do |r|
             = r.radio_button :question_id, q.id, class: "question_#{index}_id"

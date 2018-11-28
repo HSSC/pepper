@@ -10,6 +10,19 @@ class Response < ActiveRecord::Base
   validates :response_set, presence: true
   validates :question, presence: true
 
+  def weight=(value)
+    orig_value = value.to_i
+    new_value = 0
+
+    if orig_value <= 4
+      new_value = 5 - orig_value
+    elsif orig_value >= 6
+      new_value = orig_value - 5
+    end
+
+    super(new_value)
+  end
+
   private
 
   def persist_setup

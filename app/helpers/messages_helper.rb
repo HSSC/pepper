@@ -10,7 +10,7 @@ module MessagesHelper
 
   def modal_body help_text
     if uri?(help_text)
-      content_tag :iframe, '', src: help_text, width: 550, height: 500
+      content_tag :img, '', src: help_text, class: 'modal-image'
     else
       help_text
     end

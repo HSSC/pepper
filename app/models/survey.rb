@@ -17,7 +17,7 @@ class Survey < ActiveRecord::Base
                     ["DVT", 'Deep vein thrombosis (DVT) : Clot in the leg', 'Risk of a clot in the leg, it can cause leg pain or swelling, but also can occur with no symptoms. It may require spending 1-2 days in the hospital.'],
                     ["MINBLEEDSLOW", 'Minor bleeding causing slow wound healing, bruising, pain or stiffness', 'Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood and may slow down recovery.'],
                     ["MAJBLEEDINFECT", 'Major bleeding causing infection of the leg and removal of the implant.', 'Risk of a major bleeding that requires another operation to replace an infected joint (inpatient stay is needed)'],
-                    ["200COPAY", '$200 copay', 'A copay that ranges from $50- $200'],
+                    ["200COPAY", '$200 copay', 'A copay of $200'],
                     ["BLOODTEST", 'Blood test', 'Blood test requiring a visit to the provider twice a week for 4 weeks']
   ]
 
@@ -40,13 +40,8 @@ class Survey < ActiveRecord::Base
   private
 
   def regenerate_question_images
-    puts "#"*50
-    puts "inside"
-    puts "#"*50
     self.questions.each do |q|
-      puts "regen"
       q.save
-      #q.generate_image
     end
   end
 end
