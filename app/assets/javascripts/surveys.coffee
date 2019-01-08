@@ -2,6 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 $ ->
+  $('.sl-match-height').matchHeight(false)
   $('.ot-match-height').matchHeight(false)
   $('.qa-match-height').matchHeight(false)
 
@@ -29,6 +30,15 @@ $ ->
         $(textFields.pop()).val(i)
 
   }).disableSelection()
+
+  $('#sortable2').on "sortover", (event, ui) ->
+    $('.delete-li').first().hide()
+
+  $('#sortable2').on "sortout", (event, ui) ->
+    $('.delete-li').first().show()
+
+  $('#sortable2').on "sortreceive", (event, ui) ->
+    $('.delete-li').first().remove()
 
   $('[data-toggle="popover"]').popover(container: 'body')
   $('[data-toggle="tooltip"]').tooltip()

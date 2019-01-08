@@ -1,4 +1,4 @@
-.container.index-page
+.container-fluid.index-page
   .header.clearfix
     %h2.text-muted
       .row-centered
@@ -6,65 +6,68 @@
         %br
         %br
 
-  .panel.panel-default.intro-step-1
-    .panel-heading
-      Introduction
-    .panel-body
-      = image_tag 'intro.gif', class: 'img-responsive'
+  .row
+    .col-md-3
+    .col-md-6
+      .panel.panel-default.intro-step-1
+        .panel-heading
+          Introduction
+        .panel-body
+          = image_tag 'intro.gif', class: 'img-responsive'
 
-      .row
-        .col-md-12
-          %br
-          Hi my name is PEPPER, thank you for participating in this study. I am here to help you complete this survey. Below are some details about the study and how to complete the survey.
-          %br
-          %br
-          You are about to have a hip or knee replacement operation. It has become standard practice to give patients’ blood thinners medications to reduce the risk of blood clots that occur
-          after joint replacement surgery. Some blood thinners are best at reducing blood clots, but may increase the risk of bleeding during the joint replacement operation. Other blood
-          thinners cause less bleeding but may allow more blood clots to form.
-          %br
-          %br
-          We are interested in your preferences regarding the side effects, risks, and benefits of different blood thinners. You will be asked a series of questions regarding your preferences.
-          There are no right or wrong answers. The results of this survey will not have any effect on the medication you are assigned to in the PEPPER study. The survey takes about
-          20 minutes to complete. You may stop and take a break at any time, but please try to complete the survey if at all possible.
-          %br
-          %br
-          If you would like more information about the blood thinners used in the PEPPER study, please watch the following video:
-          %br
-          %br
-        .col-md-12
-          .row-centered
-            = videojs_rails sources: { mp4: "http://andrews-imac.135can.musc.edu/pepper_final.mp4" }, width:"700"
-            %br
-            %br
-            = button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
-
-  .panel.panel-default.intro-step-2
-    .panel-heading
-      The table below shows several outcomes of blood thinners. Please select the worse outcome by dragging an outcome from the left column to the right column. Please select again the worst outcome from the remaining choices in the left column by dragging it to the left column. Once all items have been selected please press continue. You can change the sequence of the selected outcomes by moving them up and down once they are in the right column.
-    .panel-body
-      .row
-        .col-md-12
-          .row-centered.sortable-area
+          .row
             .col-md-12
-
-              %ul#sortable1.connectedSortable
-                - @ranking_order.each do |values|
-                  %li{id: values[0]}= values[2]
-
-              %ul#sortable2.connectedSortable
-
+              %br
+              Hi my name is PEPPER, thank you for participating in this study. I am here to help you complete this survey. Below are some details about the study and how to complete the survey.
               %br
               %br
-
-          .row-centered
+              You are about to have a hip or knee replacement operation. It has become standard practice to give patients’ blood thinners medications to reduce the risk of blood clots that occur
+              after joint replacement surgery. Some blood thinners are best at reducing blood clots, but may increase the risk of bleeding during the joint replacement operation. Other blood
+              thinners cause less bleeding but may allow more blood clots to form.
+              %br
+              %br
+              We are interested in your preferences regarding the side effects, risks, and benefits of different blood thinners. You will be asked a series of questions regarding your preferences.
+              There are no right or wrong answers. The results of this survey will not have any effect on the medication you are assigned to in the PEPPER study. The survey takes about
+              20 minutes to complete. You may stop and take a break at any time, but please try to complete the survey if at all possible.
+              %br
+              %br
+              If you would like more information about the blood thinners used in the PEPPER study, please watch the following video:
+              %br
+              %br
             .col-md-12
+              .row-centered
+                = videojs_rails sources: { mp4: "http://andrews-imac.135can.musc.edu/pepper_final.mp4" }, width:"700"
+                %br
+                %br
+                = button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
 
-              = form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token), html: { class: 'form-inline' } do |f|
-                = f.text_field :first, value: '', class: 'hidden-elements'
-                = f.text_field :second, value: '', class: 'hidden-elements'
-                = f.text_field :third, value: '', class: 'hidden-elements'
-                = f.text_field :fourth, value: '', class: 'hidden-elements'
-                = f.text_field :fifth, value: '', class: 'hidden-elements'
-                = f.text_field :sixth, value: '', class: 'hidden-elements'
+      .panel.panel-default.intro-step-2
+        .panel-heading
+          The table below shows several outcomes of blood thinners. Please select the worse outcome by dragging an outcome from the left column to the right column. Please select again the worst outcome from the remaining choices in the left column by dragging it to the left column. Once all items have been selected please press continue. You can change the sequence of the selected outcomes by moving them up and down once they are in the right column.
+        .panel-body
+          .row
+            .col-md-12
+              .row-centered.sortable-area
+                .col-md-6
+                  %ul#sortable1.connectedSortable
+                    - @ranking_order.each do |values|
+                      %li{id: values[0], class: 'sl-match-height'}= values[2]
+                .col-md-6
+                  %ul#sortable2.connectedSortable
+                    - @ranking_order.count.times do
+                      %li.sl-match-height.delete-li
 
-                = f.submit 'Continue to Survey', class: 'btn btn-lg btn-success continue-to-survey'
+
+              .row-centered
+                .col-md-12
+
+                  = form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token), html: { class: 'form-inline' } do |f|
+                    = f.text_field :first, value: '', class: 'hidden-elements'
+                    = f.text_field :second, value: '', class: 'hidden-elements'
+                    = f.text_field :third, value: '', class: 'hidden-elements'
+                    = f.text_field :fourth, value: '', class: 'hidden-elements'
+                    = f.text_field :fifth, value: '', class: 'hidden-elements'
+                    = f.text_field :sixth, value: '', class: 'hidden-elements'
+
+                    = f.submit 'Continue to Survey', class: 'btn btn-lg btn-success continue-to-survey'
+    .col-md-3
