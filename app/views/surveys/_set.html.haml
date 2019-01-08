@@ -1,34 +1,3 @@
-.row
-  = question_col_offset(@question_set.questions.size)
-  - @question_set.questions.each_with_index do |q, index|
-    .question{class: question_col_class(@question_set.questions.size)}
-      .question-border
-        %h2= q.panel_title
-        .option-text
-          %br
-          = q.panel_description
-        = image_tag q.question_image, :class => 'img-responsive' if q.question_dimensions.present?
-        %br
-        - if q.question_attributes.present?
-          - if q.question_dimensions.present? # initial plus symbol
-            %br
-            +
-            %br
-            %br
-
-            - q.question_attributes.each_with_index do |qa, index|
-              - unless index==0
-                %br
-                +
-                %br
-                %br
-              .question_attribute= qa.description
-        .hidden-elements
-          = f.fields_for :responses, @response_set.responses.build do |r|
-            = r.radio_button :question_id, q.id, class: "question_#{index}_id"
-            = r.radio_button :weight, nil, class: "question_#{index}_weight"
-  = question_col_offset(@question_set.questions.size)
-
 - q = @question_set.questions.first
 - if q.question_dimensions.present?
   .row
@@ -46,6 +15,34 @@
       %br
       = link_to @question_set.survey.default_legend_description, "javascript:void(0);", class: 'default-legend legend-description'
     = legend_col_offset(q.question_dimensions.size)
+
+%br
+%br
+
+.row
+  = question_col_offset(@question_set.questions.size)
+  - @question_set.questions.each_with_index do |q, index|
+    .question{class: question_col_class(@question_set.questions.size)}
+      .question-border
+        %h2= q.panel_title
+        .option-text.ot-match-height
+          %br
+          = q.panel_description
+        .row.question_row
+          - if q.question_attributes.present?
+            .col-md-6.qa-match-height= image_tag q.question_image, :class => 'img-responsive' if q.question_dimensions.present?
+            - if q.question_dimensions.present? # initial plus symbol
+              - q.question_attributes.each_with_index do |qa, index|
+                .col-md-1.qa-match-height.question_attribute.question_attribute_and
+                  &
+                .col-md-5.qa-match-height.question_attribute= qa.description
+          - else
+            .col-md-12= image_tag q.question_image, :class => 'img-responsive' if q.question_dimensions.present?
+        .hidden-elements
+          = f.fields_for :responses, @response_set.responses.build do |r|
+            = r.radio_button :question_id, q.id, class: "question_#{index}_id"
+            = r.radio_button :weight, nil, class: "question_#{index}_weight"
+  = question_col_offset(@question_set.questions.size)
 
 .row
   .col-md-12

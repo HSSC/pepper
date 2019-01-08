@@ -31,7 +31,7 @@ module QuestionImageGenerator
         script += " #{base_image}"
       end
 
-      script += " -tile 20x -geometry +2+2 #{file.path}"
+      script += " -tile 10x -geometry +2+2 #{file.path}"
 
       # generate the montage
       # montage source_images/Y_person.png source_images/G_person.png -tile 20x -geometry +2+2 montage.jpg

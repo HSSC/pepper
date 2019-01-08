@@ -1,34 +1,10 @@
 .container.index-page
   .header.clearfix
     %h2.text-muted
-      .title.row-centered
-        %span.dark P
-        ulmonary
-        &nbsp;
-        %span.dark E
-        mbolism
-        &nbsp;
-        %span.dark P
-        revention
-        &nbsp;
-        after
-        &nbsp;
-        Hi
-        %span.dark P
-        &nbsp;
-        and
-        &nbsp;
-        Kne
-        %span.dark E
-        &nbsp;
-        %span.dark R
-        eplacement:
-
       .row-centered
-        Balancing Safety and Effectiveness
+        Blood Thinners Preferences Survey
         %br
         %br
-        The PEPPER Trial
 
   .panel.panel-default.intro-step-1
     .panel-heading
@@ -49,7 +25,7 @@
           %br
           We are interested in your preferences regarding the side effects, risks, and benefits of different blood thinners. You will be asked a series of questions regarding your preferences.
           There are no right or wrong answers. The results of this survey will not have any effect on the medication you are assigned to in the PEPPER study. The survey takes about
-          20 minutes to complete. You may stop and take a break at any time, but please to complete the survey if at all possible.
+          20 minutes to complete. You may stop and take a break at any time, but please try to complete the survey if at all possible.
           %br
           %br
           If you would like more information about the blood thinners used in the PEPPER study, please watch the following video:
@@ -57,14 +33,14 @@
           %br
         .col-md-12
           .row-centered
-            = videojs_rails sources: { mp4: "http://pepper-pref-demo.musc.edu/pepper_final.mp4" }, width:"700"
+            = videojs_rails sources: { mp4: "http://andrews-imac.135can.musc.edu/pepper_final.mp4" }, width:"700"
             %br
             %br
             = button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
 
   .panel.panel-default.intro-step-2
     .panel-heading
-      The table below shows several outcomes of blood thinners. Please select the worse outcome. once you select an outcome it will move to the right column. Please select again the worst outcome from the remaining choices in the left column. Once all items have been selected please press continue
+      The table below shows several outcomes of blood thinners. Please select the worse outcome by dragging an outcome from the left column to the right column. Please select again the worst outcome from the remaining choices in the left column by dragging it to the left column. Once all items have been selected please press continue. You can change the sequence of the selected outcomes by moving them up and down once they are in the right column.
     .panel-body
       .row
         .col-md-12
