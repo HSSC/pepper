@@ -7,7 +7,7 @@
             %span{"aria-hidden" => "true"} ×
           %h4.modal-title Recovery without complications
         .modal-body
-          = image_tag 'recovery_no_issue.jpg', class: 'modal-image'
+          = videojs_rails sources: { mp4: root_url + "videos/z_Healthy MrPepper.mp4" }, autoplay: true, width:"550"
         .modal-footer
           %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"} Close
       / /.modal-content

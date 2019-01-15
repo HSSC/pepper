@@ -51,7 +51,7 @@ ActiveRecord::Schema.define(version: 20181126195859) do
     t.integer  "image_file_size",       limit: 4
     t.datetime "image_updated_at"
     t.string   "legend_description",    limit: 255
-    t.string   "help_text",             limit: 255
+    t.string   "help_text_image",       limit: 255
     t.text     "help_text_description", limit: 65535
   end
 
@@ -100,7 +100,7 @@ ActiveRecord::Schema.define(version: 20181126195859) do
     t.integer  "image_file_size",       limit: 4
     t.datetime "image_updated_at"
     t.string   "legend_description",    limit: 255
-    t.string   "help_text",             limit: 255
+    t.string   "help_text_image",       limit: 255
     t.text     "help_text_description", limit: 65535
   end
 

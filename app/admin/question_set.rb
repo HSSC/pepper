@@ -3,7 +3,7 @@ ActiveAdmin.register QuestionSet do
   menu priority: 2, label: 'Sets'
 
   permit_params :survey_id, :participant_identifier, :title, :subtitle,
-                questions_attributes: [:id, :panel_title, :panel_description, :_destroy, question_dimensions_attributes: [:id, :count, :image, :legend_description, :help_text, :help_text_description, :_destroy]]
+                questions_attributes: [:id, :panel_title, :panel_description, :_destroy, question_dimensions_attributes: [:id, :count, :image, :legend_description, :help_text_image, :help_text_description, :_destroy]]
 
   filter :survey_id, as: :select, collection: proc { Survey.all }
   filter :participant_identifier, as: :select
@@ -40,7 +40,7 @@ ActiveAdmin.register QuestionSet do
           b.input :count
           b.input :image, :as => :file, :hint => image_tag(b.object.image.present? ? b.object.image.url : '/images/original/missing.png')
           b.input :legend_description
-          b.input :help_text
+          b.input :help_text_image
           b.input :help_text_description
         end
       end
@@ -76,7 +76,7 @@ ActiveAdmin.register QuestionSet do
               image_tag(t.image.present? ? t.image.url : '/images/original/missing.png')
             end
             column :legend_description
-            column :help_text
+            column :help_text_image
           end
         end
       end

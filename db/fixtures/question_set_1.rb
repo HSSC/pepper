@@ -4,8 +4,8 @@
   Question.seed do |q|
     q.id = 1
     q.question_set_id = 1
-    q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patients out of 100 will experience this bleeding event and will pay a $200 copay"
+    q.panel_title = 'Treatment A'
+    q.panel_description = "Zero patients out of 100 will experience a minor bleeding event and will pay a $200 copay"
   end
 
     ### Begin QuestionDimension id:1 ###
@@ -13,10 +13,10 @@
       qd.id = 1
       qd.question_id = 1
       qd.count = 0
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding."
-      qd.help_text = ""
-      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood."
+      qd.image = File.open(Rails.root.join("app/assets/images/people/O_person.png"))
+      qd.legend_description = "Minor bleeding causing slow wound healing, bruising, pain or stiffness"
+      qd.help_text_image = "03_MinorBleedingAnimation.mp4"
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:1 ###
 
@@ -25,8 +25,8 @@
       qa.id = 1
       qa.question_id = 1
       qa.description = "$200 copay"
-      qa.panel_title = "Option 1 Copay"
-      qa.panel_description = "$200 copay"
+      qa.panel_title = ""
+      qa.panel_description = ""
     end
     ### End Question Attribute id:1 ###
 
@@ -36,19 +36,19 @@
   Question.seed do |q|
     q.id = 2
     q.question_set_id = 1
-    q.panel_title = 'Option 2 Profile'
-    q.panel_description = "10 patients out of 100 will experience this bleeding event and not pay a copay"
+    q.panel_title = 'Treatment B'
+    q.panel_description = "2 patients out of 100 will experience a minor bleeding event and will not pay a copay"
   end
 
     ### Begin QuestionDimension id:2 ###
     QuestionDimension.seed do |qd|
       qd.id = 2
       qd.question_id = 2
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding."
-      qd.help_text = ""
-      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood."
-      qd.count = 10
+      qd.count = 2
+      qd.image = File.open(Rails.root.join("app/assets/images/people/O_person.png"))
+      qd.legend_description = "Minor bleeding causing slow wound healing, bruising, pain or stiffness"
+      qd.help_text_image = "03_MinorBleedingAnimation.mp4"
+      qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:2 ###
 
@@ -57,8 +57,8 @@
       qa.id = 2
       qa.question_id = 2
       qa.description = "No Copay"
-      qa.panel_title = "Option 2 Copay"
-      qa.panel_description = "No copay"
+      qa.panel_title = ""
+      qa.panel_description = ""
     end
     ### End Question Attribute id:2 ###
 

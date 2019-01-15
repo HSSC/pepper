@@ -4,8 +4,8 @@
   Question.seed do |q|
     q.id = 7
     q.question_set_id = 4
-    q.panel_title = 'Option 1 Profile'
-    q.panel_description = "Zero patients out of 100 will experience this bleeding event and 1 patient out of 100 will experience a life threatening clot in the lung"
+    q.panel_title = 'Treatment A'
+    q.panel_description = "Zero patients out of 100 will experience this bleeding event and 1 patient out of 100 will experience a clot in the lung (can be life threatening)"
   end
 
     ### Begin QuestionDimension id:5 ###
@@ -13,9 +13,9 @@
       qd.id = 11
       qd.question_id = 7
       qd.count = 0
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding"
-      qd.help_text = ""
+      qd.image = File.open(Rails.root.join("app/assets/images/people/O_person.png"))
+      qd.legend_description = "Minor bleeding causing slow wound healing, bruising, pain or stiffness"
+      qd.help_text_image = "03_MinorBleedingAnimation.mp4"
       qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:5 ###
@@ -25,10 +25,10 @@
       qd.id = 12
       qd.question_id = 7
       qd.count = 1
-      qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung"
-      qd.help_text = ""
-      qd.help_text_description = "Risk of life threatening clot in the lung"
+      qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
+      qd.legend_description = "Pulmonary Embolism, clot in the lung"
+      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:6 ###
 
@@ -38,8 +38,8 @@
   Question.seed do |q|
     q.id = 8
     q.question_set_id = 4
-    q.panel_title = 'Option 2 Profile'
-    q.panel_description = "10 patients out of 100 will experience this bleeding event and zero patients out of 100 will experience a life threatening clot in the lung"
+    q.panel_title = 'Treatment B'
+    q.panel_description = "10 patients out of 100 will experience this bleeding event and zero patients out of 100 will experience a clot in the lung (can be life threatening)"
   end
 
     ### Begin QuestionDimension id:7 ###
@@ -47,9 +47,9 @@
       qd.id = 13
       qd.question_id = 8
       qd.count = 10
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Slow wound healing, bruising, pain or stiffness caused by bleeding"
-      qd.help_text = ""
+      qd.image = File.open(Rails.root.join("app/assets/images/people/O_person.png"))
+      qd.legend_description = "Minor bleeding causing slow wound healing, bruising, pain or stiffness"
+      qd.help_text_image = "03_MinorBleedingAnimation.mp4"
       qd.help_text_description = "Risk of bleeding that can cause pain, stiffness, and wound leakage.  Requires a visit to surgeon’s office to drain blood"
     end
     ### End QuestionDimension id:7 ###
@@ -59,10 +59,10 @@
       qd.id = 14
       qd.question_id = 8
       qd.count = 0
-      qd.image = File.open(Rails.root.join("app/assets/images/people/Y_person.png"))
-      qd.legend_description = "Life threatening clot in the lung"
-      qd.help_text = ""
-      qd.help_text_description = "Risk of life threatening clot in the lung"
+      qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
+      qd.legend_description = "Pulmonary Embolism, clot in the lung"
+      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:8 ###
 

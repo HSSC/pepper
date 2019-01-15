@@ -2,7 +2,7 @@ class SurveysController < ApplicationController
   before_action :fetch_survey
 
   def index
-    @user_token = params[:user_token]
+    @user_token = params[:user_token] || random_string
     @response_set = ResponseSet.where(user_token: params[:user_token]).first_or_create(survey: @survey, participant_identifier: 'PAT0', user_token: @user_token)
     @ranking_order = Survey::RANKING_ORDER.shuffle
   end

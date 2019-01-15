@@ -4,8 +4,8 @@
   Question.seed do |q|
     q.id = 9
     q.question_set_id = 5
-    q.panel_title = 'Option 1 Profile'
-    q.panel_description = "2 patients out of 100 will experience this bleeding event and will not pay a copay"
+    q.panel_title = 'Treatment A'
+    q.panel_description = "2 patients out of 100 will experience a major bleeding event and will not pay a copay"
   end
 
     ### Begin QuestionDimension id:1 ###
@@ -13,10 +13,10 @@
       qd.id = 15
       qd.question_id = 9
       qd.count = 2
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Implant removal due to an infection, caused by major bleeding"
-      qd.help_text = ""
-      qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
+      qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
+      qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
+      qd.help_text_image = "04_Major Bleading.mp4"
+      qd.help_text_description = "Major bleeding causing infection of the leg and removal of the implant"
     end
     ### End QuestionDimension id:1 ###
 
@@ -25,8 +25,8 @@
       qa.id = 3
       qa.question_id = 9
       qa.description = "No copay"
-      qa.panel_title = "Option 1 Copay"
-      qa.panel_description = "No copay"
+      qa.panel_title = ""
+      qa.panel_description = ""
     end
     ### End Question Attribute id:1 ###
 
@@ -36,8 +36,8 @@
   Question.seed do |q|
     q.id = 10
     q.question_set_id = 5
-    q.panel_title = 'Option 2 Profile'
-    q.panel_description = "Zero patients out of 100 will experience this bleeding event and will pay a $200 copay"
+    q.panel_title = 'Treatment B'
+    q.panel_description = "Zero patients out of 100 will experience a major bleeding event and will pay a $200 copay"
   end
 
     ### Begin QuestionDimension id:2 ###
@@ -45,10 +45,10 @@
       qd.id = 16
       qd.question_id = 10
       qd.count = 0
-      qd.image = File.open(Rails.root.join("app/assets/images/people/R_person.png"))
-      qd.legend_description = "Implant removal due to an infection, caused by major bleeding"
-      qd.help_text = ""
-      qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
+      qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
+      qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
+      qd.help_text_image = "04_Major Bleading.mp4"
+      qd.help_text_description = "Major bleeding causing infection of the leg and removal of the implant"
     end
     ### End QuestionDimension id:2 ###
 
@@ -57,8 +57,8 @@
       qa.id = 4
       qa.question_id = 10
       qa.description = "$200 copay"
-      qa.panel_title = "Option 2 Copay"
-      qa.panel_description = "$200 copay"
+      qa.panel_title = ""
+      qa.panel_description = ""
     end
     ### End Question Attribute id:2 ###
 
