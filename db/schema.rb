@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181126195859) do
+ActiveRecord::Schema.define(version: 20190227141455) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace",     limit: 255
@@ -122,11 +122,11 @@ ActiveRecord::Schema.define(version: 20181126195859) do
   create_table "responses", force: :cascade do |t|
     t.integer  "response_set_id", limit: 4
     t.integer  "question_id",     limit: 4
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                                            null: false
+    t.datetime "updated_at",                                            null: false
     t.string   "title",           limit: 255
     t.string   "subtitle",        limit: 255
-    t.integer  "weight",          limit: 4
+    t.decimal  "weight",                      precision: 15, scale: 10
   end
 
   create_table "surveys", force: :cascade do |t|

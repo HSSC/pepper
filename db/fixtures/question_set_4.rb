@@ -27,7 +27,7 @@
       qd.count = 1
       qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
       qd.legend_description = "Pulmonary Embolism, clot in the lung"
-      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_image = "01_Shortness_of_Breath_Animated.mp4"
       qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:6 ###
@@ -61,7 +61,7 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
       qd.legend_description = "Pulmonary Embolism, clot in the lung"
-      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_image = "01_Shortness_of_Breath_Animated.mp4"
       qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:8 ###

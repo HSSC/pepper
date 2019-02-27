@@ -27,7 +27,7 @@
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
       qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
-      qd.help_text_image = "04_Major Bleading.mp"
+      qd.help_text_image = "04_Major_Bleading.mp"
       qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:6 ###
@@ -61,7 +61,7 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
       qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
-      qd.help_text_image = "04_Major Bleading.mp"
+      qd.help_text_image = "04_Major_Bleading.mp"
       qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:8 ###

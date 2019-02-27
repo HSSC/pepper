@@ -64,7 +64,6 @@ $ ->
           'min': 0,
           'max': 10
       },
-      step: 1,
       pips: {
         mode: 'steps',
         density: 10,
@@ -78,13 +77,13 @@ $ ->
     # retrieve values when user slides
     slider.noUiSlider.on 'slide', (values, handle) ->
       value = values[handle]
-      if value >= 0 && value <= 4
+      if value >= 0 && value <= 4.99
         $('.question_0_weight').val(Math.abs(value))
         $('.question_0_id').prop('checked', true)
         $('.question_1_id').prop('checked', false)
         $('.question_0_weight').prop('checked', true)
         $('.question_1_weight').prop('checked', false)
-      else if value >= 6 && value <= 10
+      else if value >= 5.0 && value <= 10
         $('.question_1_weight').val(Math.abs(value))
         $('.question_1_id').prop('checked', true)
         $('.question_0_id').prop('checked', false)

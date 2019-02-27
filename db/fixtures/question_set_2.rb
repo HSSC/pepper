@@ -15,7 +15,7 @@
       qd.count = 5
       qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
       qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
-      qd.help_text_image = "04_Major Bleading.mp4"
+      qd.help_text_image = "04_Major_Bleading.mp4"
       qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:3 ###
@@ -27,7 +27,7 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
       qd.legend_description = "Pulmonary Embolism, clot in the lung"
-      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_image = "01_Shortness_of_Breath_Animated.mp4"
       qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:4 ###
@@ -49,7 +49,7 @@
       qd.count = 0
       qd.image = File.open(Rails.root.join("app/assets/images/people/P_person.png"))
       qd.legend_description = "Major bleeding causing infection of the leg and removal of the implant"
-      qd.help_text_image = "04_Major Bleading.mp4"
+      qd.help_text_image = "04_Major_Bleading.mp4"
       qd.help_text_description = "Undergoing another operation to replace an infected joint due to major bleeding (inpatient stay needed)"
     end
     ### End QuestionDimension id:5 ###
@@ -61,7 +61,7 @@
       qd.count = 2
       qd.image = File.open(Rails.root.join("app/assets/images/people/B_person.png"))
       qd.legend_description = "Pulmonary Embolism, clot in the lung"
-      qd.help_text_image = "01_Shortness of Breath_Animated.mp4"
+      qd.help_text_image = "01_Shortness_of_Breath_Animated.mp4"
       qd.help_text_description = "Risk of clot in the lung (can be life threatening) that requires spending 5-7 days in the hospital"
     end
     ### End QuestionDimension id:6 ###

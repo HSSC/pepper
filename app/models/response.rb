@@ -11,12 +11,12 @@ class Response < ActiveRecord::Base
   validates :question, presence: true
 
   def weight=(value)
-    orig_value = value.to_i
+    orig_value = value.to_f
     new_value = 0
 
-    if orig_value <= 4
+    if orig_value <= 4.99
       new_value = 5 - orig_value
-    elsif orig_value >= 6
+    elsif orig_value >= 5.0
       new_value = orig_value - 5
     end
 
