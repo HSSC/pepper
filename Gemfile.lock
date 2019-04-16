@@ -244,6 +244,7 @@ DEPENDENCIES
   activeadmin (~> 1.0.0.pre4)
   byebug
   capistrano (~> 3.11)
+  capistrano-bundler
   capistrano-passenger
   capistrano-rails (~> 1.4)
   capistrano-rvm
