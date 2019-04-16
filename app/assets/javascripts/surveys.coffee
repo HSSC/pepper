@@ -78,18 +78,24 @@ $ ->
     slider.noUiSlider.on 'slide', (values, handle) ->
       value = values[handle]
       if value >= 0 && value <= 4.99
+        $('.right-check').hide()
+        $('.left-check').show()
         $('.question_0_weight').val(Math.abs(value))
         $('.question_0_id').prop('checked', true)
         $('.question_1_id').prop('checked', false)
         $('.question_0_weight').prop('checked', true)
         $('.question_1_weight').prop('checked', false)
       else if value >= 5.0 && value <= 10
+        $('.right-check').show()
+        $('.left-check').hide()
         $('.question_1_weight').val(Math.abs(value))
         $('.question_1_id').prop('checked', true)
         $('.question_0_id').prop('checked', false)
         $('.question_1_weight').prop('checked', true)
         $('.question_0_weight').prop('checked', false)
       else
+        $('.right-check').hide()
+        $('.left-check').hide()
         $('.question_0_weight').val('')
         $('.question_1_weight').val('')
         $('.question_0_id').prop('checked', false)

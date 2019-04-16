@@ -26,8 +26,8 @@
           .row
             .col-md-12
               %ul
-                %li In this section, we ask you to consider scenarios involving two hypothetical treatments, treatment A and treatment B. In each scenario below, treatment A and B will have different combinations of risks. Please select on the scale below which treatment you prefer, treatment A or B.
-                %li The risk of a particular outcome is presented using the colored figure. To learn more about the outcome and its risk, please click on the icon.
+                %li In this section, we ask you to think about situations involving two make-believe treatments, treatment A and treatment B. In each scenario below, treatment A and B will have different groups of risks. Please select on the scale below which treatment you prefer, treatment A or B.
+                %li To learn more about the outcome and its risk, please click on the icon.
     .col-md-2
 
 = form_for @response_set, url: survey_update_path(study_identifier: @survey.study_identifier, user_token: @response_set.user_token) do |f|

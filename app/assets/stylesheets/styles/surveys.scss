@@ -162,6 +162,7 @@
   margin: 0;
   padding: 5px 0 0 0;
   float: left;
+  margin-bottom: 15px;
 }
 
 #sortable1 li, #sortable2 li {
@@ -175,7 +176,7 @@
 /* slider styling */
 
 #slider {
-  width: 60%;
+  width: 100%;
   margin: 0 auto;
 }
 
@@ -186,4 +187,12 @@
   white-space: inherit !important;
 }
 
+.right-check, .left-check {
+  display: none;
+  padding-top: 45px;
+  width: 40px;
+}
 
+.left-check {
+  float: right;
+}
