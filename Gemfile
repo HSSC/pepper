@@ -58,3 +58,10 @@ gem 'devise'
 
 gem 'seed-fu'
 gem 'videojs_rails'
+
+group :deploy do
+  gem 'capistrano', '~> 3.11'
+  gem 'capistrano-rvm'
+  gem 'capistrano-rails', '~> 1.4'
+  gem 'capistrano-passenger'
+end
