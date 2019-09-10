@@ -56,7 +56,7 @@ $ ->
     $('.question_0_weight').prop('checked', false)
     $('.question_1_weight').prop('checked', false)
 
-    stepValues = {0:'Definitely prefer Treatment A', 1:'', 2:'', 3:'', 4:'', 5:'', 6:'', 7:'', 8:'', 9:'', 10:'Definitely prefer Treatment B'}
+    stepValues = {0:'Definitely prefer Option A', 1:'', 2:'', 3:'', 4:'', 5:'', 6:'', 7:'', 8:'', 9:'', 10:'Definitely prefer Option B'}
 
     noUiSlider.create(slider, {
       start: [5],
