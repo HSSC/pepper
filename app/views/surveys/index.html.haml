@@ -21,20 +21,20 @@
               Hi my name is PEPPER, thank you for participating in this study. I am here to help you complete this survey. Below are some details about the study and how to complete the survey.
               %br
               %br
-              You are about to have a hip or knee replacement operation. It is standard practice to give patients a medication after hip or knee surgery that thins the blood and reduces the risk of forming a blood clot.
+              You are about to have or recently had a hip or knee replacement operation. It is standard practice to give patients a medication after hip or knee surgery that thins the blood and reduces the risk of forming a blood clot.
               %br
               %br
               We are interested in your preferences regarding the side effects, risks, and benefits of different blood thinners. You will be asked a series of questions regarding your preferences.
-              There are no right or wrong answers. The results of this survey will not have any effect on the medication you are assigned to in the PEPPER study. The survey takes about
+              There are no right or wrong answers. The results of this survey will not have any effect on the medication you are assigned. The survey takes about
               20 minutes to complete. You may stop and take a break at any time, but please try to complete the survey if at all possible.
               %br
               %br
-              If you would like more information about the blood thinners used in the PEPPER study, please watch the following video:
+              If you would like more information about the blood thinners, please watch the following video:
               %br
               %br
             .col-md-12
               .row-centered
-                = videojs_rails sources: { mp4: root_url + "pepper_final.mp4" }, width:"700"
+                %iframe{src: "https://player.vimeo.com/video/500994850", width: "640", height: "360", frameborder: "0", allow: "autoplay; fullscreen; picture-in-picture", allowfullscreen: true}
                 %br
                 %br
                 = button_tag 'Continue', class: 'btn btn-lg btn-success continue-to-start'
